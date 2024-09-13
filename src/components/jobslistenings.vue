@@ -1,6 +1,6 @@
 <script setup>
 
-// import jobData from '@/job2.json';
+import jobData from '@/job2.json';
 import { reactive, defineProps, onMounted } from 'vue';
 import JobListening from '@/components/jobListening.vue';
 import { RouterLink } from 'vue-router';
@@ -20,8 +20,9 @@ defineProps({
 })
 onMounted(async () => {
     try {
-        const response = await axios.get('/api/jobs');
-        state.jobs = response.data;
+        // const response = await axios.get('/api/jobs');
+
+        state.jobs = jobData.jobs;
 
     } catch (error) {
         console.log('error', error);
