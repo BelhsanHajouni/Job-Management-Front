@@ -4,7 +4,7 @@ import Jobsview from "@/views/jobsview.vue";
 import Jobview from "@/views/jobview.vue";
 import notfoundview from "@/views/notfoundview.vue";
 import AddjobView from "@/views/addjobView.vue";
-import EditJobView from "@/views/editJobView.vue";
+import EditJobView from "@/views/EditJobView.vue";
 
 const router = createRouter({
     history: createWebHistory(import.meta.env.BASE_URL),

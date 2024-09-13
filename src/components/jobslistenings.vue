@@ -1,13 +1,12 @@
 <script setup>
 
-// import jobData from '@/job2.json'
+// import jobData from '@/job2.json';
 import { reactive, defineProps, onMounted } from 'vue';
 import JobListening from '@/components/jobListening.vue';
 import { RouterLink } from 'vue-router';
 import axios from 'axios';
 import PulseLoader from 'vue-spinner/src/PulseLoader.vue'
 
-// const jobs = ref(jobData.jobs);
 const state = reactive({
     jobs: [],
     isLoading: true
@@ -22,14 +21,13 @@ defineProps({
 onMounted(async () => {
     try {
         const response = await axios.get('/api/jobs');
-        state.jobs = response.data
+        state.jobs = response.data;
+
     } catch (error) {
         console.log('error', error);
     } finally {
         state.isLoading = false
     }
-    console.log(state);
-
 })
 </script>
 <template>
